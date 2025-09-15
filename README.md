@@ -1,73 +1,125 @@
-# Welcome to your Lovable project
+# CrossPay - Cross-Border Payment dApp
 
-## Project info
+A modern decentralized application for fast, secure, and affordable cross-border payments powered by blockchain technology.
 
-**URL**: https://lovable.dev/projects/22ef0f1c-1513-4c5b-a835-4263fa5a336e
+## Features
 
-## How can I edit this code?
+- 🌍 **Global Reach**: Send money to 180+ countries
+- ⚡ **Instant Settlement**: Transfers complete in minutes, not days
+- 💰 **Low Fees**: Up to 90% lower fees than traditional banks
+- 🔒 **Bank-Level Security**: Military-grade encryption and smart contract security
+- 📱 **Easy to Use**: Simple, intuitive interface on any device
+- 💱 **Best Exchange Rates**: Competitive mid-market rates with no markup
 
-There are several ways of editing your application.
+## Technology Stack
 
-**Use Lovable**
+### Frontend
+- **React 18** with TypeScript
+- **Tailwind CSS** for styling
+- **shadcn/ui** component library
+- **Vite** for build tooling
+- **React Query** for data fetching
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/22ef0f1c-1513-4c5b-a835-4263fa5a336e) and start prompting.
+### Blockchain
+- **Hardhat** for smart contract development
+- **Solidity 0.8.19** for smart contracts
+- **Ethers.js** for blockchain interaction
+- **OpenZeppelin** contracts for security
 
-Changes made via Lovable will be committed automatically to this repo.
+## Getting Started
 
-**Use your preferred IDE**
+### Prerequisites
+- Node.js & npm ([install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating))
+- Git
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Installation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+1. Clone the repository:
+```bash
 git clone <YOUR_GIT_URL>
+cd crosspay-dapp
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+2. Install dependencies:
+```bash
+npm install
+```
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+4. In a separate terminal, start a local Hardhat node:
+```bash
+npx hardhat node
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+5. Deploy smart contracts to local network:
+```bash
+npx hardhat run scripts/deploy.js --network localhost
+```
 
-**Use GitHub Codespaces**
+## Smart Contract
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+The `CrossBorderPayment` contract handles:
+- Payment initiation and tracking
+- Multi-currency support
+- Secure fund transfers
+- Real-time payment status updates
 
-## What technologies are used for this project?
+### Contract Functions
+- `sendPayment()`: Initiate a cross-border payment
+- `completePayment()`: Complete payment on receiver side
+- `getPayment()`: Get payment details and status
 
-This project is built with:
+## Available Scripts
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npx hardhat compile` - Compile smart contracts
+- `npx hardhat test` - Run smart contract tests
+- `npx hardhat node` - Start local blockchain node
 
-## How can I deploy this project?
+## Project Structure
 
-Simply open [Lovable](https://lovable.dev/projects/22ef0f1c-1513-4c5b-a835-4263fa5a336e) and click on Share -> Publish.
+```
+├── contracts/          # Smart contracts
+├── scripts/            # Deployment scripts
+├── src/
+│   ├── components/     # React components
+│   ├── pages/          # Page components
+│   ├── hooks/          # Custom hooks
+│   └── lib/            # Utilities
+├── public/             # Static assets
+└── artifacts/          # Compiled contracts
+```
 
-## Can I connect a custom domain to my Lovable project?
+## Deployment
 
-Yes, you can!
+### Frontend
+Deploy using [Lovable](https://lovable.dev) or any static hosting service.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Smart Contracts
+Deploy to testnets or mainnet using Hardhat:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+```bash
+npx hardhat run scripts/deploy.js --network <network-name>
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+## License
+
+MIT License - see LICENSE file for details
+
+## Support
+
+For support, please open an issue on GitHub or contact the development team.
